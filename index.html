@@ -5,25 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noble House | 邸宅という名のアート</title>
     <meta name="description" content="すべては、美しく住まうために。Noble Houseは、建築家と共に創る完全自由設計の高級注文住宅ブランドです。">
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: 上品な明朝体、英語フォント、署名用の筆記体 -->
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Shippori+Mincho:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
-        /* ベース設定 */
+        /* フォント設定 */
         body { font-family: 'Shippori Mincho', serif; }
         .font-eng { font-family: 'Cinzel', serif; }
-        .font-sign { font-family: 'Great Vibes', cursive; } /* 署名用フォント */
+        .font-sign { font-family: 'Great Vibes', cursive; }
         
-        /* スクロールアニメーション用クラス */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        
-        /* 画像のズーム効果 */
+        /* 画像のズーム効果のみ残す */
         .img-zoom-container { overflow: hidden; }
         .img-zoom { transition: transform 1.5s ease; }
         .img-zoom-container:hover .img-zoom { transform: scale(1.05); }
 
-        /* ナビゲーションの透過処理 */
+        /* ナビゲーションの背景変化 */
         header.scrolled { background-color: rgba(255, 255, 255, 0.95); box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); padding-top: 1rem; padding-bottom: 1rem; }
     </style>
 </head>
@@ -38,15 +35,15 @@
                 <p class="text-[10px] tracking-[0.3em] uppercase text-gray-500">Architects</p>
             </a>
 
-            <!-- デスクトップナビ -->
+            <!-- PC用ナビ -->
             <nav class="hidden md:flex space-x-12 items-center text-sm tracking-widest">
-                <a href="#concept" class="hover:text-gray-500 transition relative after:content-[''] after:block after:w-0 after:h-[1px] after:bg-gray-400 after:transition-all after:duration-300 hover:after:w-full">Concept</a>
-                <a href="#works" class="hover:text-gray-500 transition relative after:content-[''] after:block after:w-0 after:h-[1px] after:bg-gray-400 after:transition-all after:duration-300 hover:after:w-full">Works</a>
-                <a href="#modelhouse" class="hover:text-gray-500 transition relative after:content-[''] after:block after:w-0 after:h-[1px] after:bg-gray-400 after:transition-all after:duration-300 hover:after:w-full">Model House</a>
+                <a href="#concept" class="hover:text-gray-500 transition border-b border-transparent hover:border-gray-400">Concept</a>
+                <a href="#works" class="hover:text-gray-500 transition border-b border-transparent hover:border-gray-400">Works</a>
+                <a href="#modelhouse" class="hover:text-gray-500 transition border-b border-transparent hover:border-gray-400">Model House</a>
                 <a href="#contact" class="px-6 py-3 border border-gray-800 text-gray-800 hover:bg-gray-800 hover:text-white transition duration-500">Contact</a>
             </nav>
 
-            <!-- モバイルメニューボタン -->
+            <!-- スマホ用メニューボタン -->
             <button id="menu-btn" class="md:hidden z-50 p-2 space-y-1.5 group">
                 <span class="block w-6 h-[1px] bg-gray-800 group-hover:bg-gray-500 transition"></span>
                 <span class="block w-6 h-[1px] bg-gray-800 group-hover:bg-gray-500 transition"></span>
@@ -55,7 +52,7 @@
         </div>
     </header>
 
-    <!-- モバイルメニュー -->
+    <!-- スマホ用メニュー画面 -->
     <div id="mobile-menu" class="fixed inset-0 bg-[#FDFBF7] z-40 transform translate-x-full transition-transform duration-500 flex items-center justify-center">
         <nav class="text-center space-y-8">
             <a href="#concept" class="block text-2xl font-eng tracking-widest hover:text-gray-500 mobile-link">Concept</a>
@@ -68,20 +65,20 @@
     <!-- ヒーローセクション -->
     <section class="relative h-screen overflow-hidden">
         <div class="absolute inset-0">
-            <!-- ヒーロー画像 (モダンリビング) -->
+            <!-- 背景画像 -->
             <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop" alt="Luxury Living Room" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/20"></div>
         </div>
         <div class="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-6">
-            <p class="text-sm md:text-base tracking-[0.5em] mb-6 opacity-80 reveal active transition delay-300">Timeless Elegance</p>
-            <h2 class="text-4xl md:text-7xl lg:text-8xl font-eng tracking-wider mb-8 reveal active transition delay-500 font-light">
+            <p class="text-sm md:text-base tracking-[0.5em] mb-6 opacity-90">Timeless Elegance</p>
+            <h2 class="text-4xl md:text-7xl lg:text-8xl font-eng tracking-wider mb-8 font-light">
                 The Art of Living
             </h2>
-            <p class="text-lg md:text-2xl font-light tracking-widest reveal active transition delay-700">
+            <p class="text-lg md:text-2xl font-light tracking-widest">
                 邸宅という名の、芸術を。
             </p>
         </div>
-        <!-- スクロールダウン -->
+        <!-- スクロールダウン表示 -->
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center opacity-70 animate-bounce">
             <span class="text-[10px] tracking-widest text-white mb-2 uppercase font-eng">Scroll</span>
             <div class="w-[1px] h-12 bg-white"></div>
@@ -91,7 +88,7 @@
     <!-- Concept -->
     <section id="concept" class="py-32 md:py-48 px-6">
         <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16 md:gap-24">
-            <div class="md:w-1/2 reveal">
+            <div class="md:w-1/2">
                 <span class="text-xs font-eng tracking-[0.3em] text-gray-500 block mb-6">PHILOSOPHY</span>
                 <h3 class="text-3xl md:text-4xl leading-relaxed font-light mb-10">
                     余白を愉しみ、<br>
@@ -103,15 +100,14 @@
                     お客様一人ひとりの美意識を空間に映し出し、
                     50年、100年と愛され続ける「経年優化」する住まいを創造します。
                 </p>
-                <!-- 画像ではなくテキストで署名を表示 -->
+                <!-- 署名 -->
                 <p class="text-4xl text-gray-400 font-sign opacity-80">Noble House Architects</p>
             </div>
-            <div class="md:w-1/2 relative reveal transition delay-200">
+            <div class="md:w-1/2 relative">
                 <div class="img-zoom-container aspect-[3/4]">
-                    <!-- 縦長の建築画像 -->
                     <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="Japanese Modern Architecture" class="w-full h-full object-cover img-zoom">
                 </div>
-                <!-- 装飾的な背景ボックス -->
+                <!-- 装飾枠 -->
                 <div class="absolute -bottom-8 -left-8 w-full h-full border border-gray-300 -z-10 hidden md:block"></div>
             </div>
         </div>
@@ -120,14 +116,14 @@
     <!-- Works Gallery -->
     <section id="works" class="py-20 px-6 bg-white">
         <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-20 reveal">
+            <div class="text-center mb-20">
                 <span class="text-xs font-eng tracking-[0.3em] text-gray-500 block mb-4">OUR WORKS</span>
                 <h3 class="text-3xl font-light">建築実例</h3>
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
-                <!-- Case 1: モダン外観 -->
-                <article class="reveal group cursor-pointer">
+                <!-- Case 1 -->
+                <article class="group cursor-pointer">
                     <div class="img-zoom-container aspect-[16/10] mb-6 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Modern House Exterior" class="w-full h-full object-cover img-zoom">
                     </div>
@@ -140,8 +136,8 @@
                     </div>
                 </article>
 
-                <!-- Case 2: インテリア -->
-                <article class="reveal transition delay-200 group cursor-pointer md:mt-20">
+                <!-- Case 2 -->
+                <article class="group cursor-pointer md:mt-20">
                     <div class="img-zoom-container aspect-[16/10] mb-6 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Modern Interior" class="w-full h-full object-cover img-zoom">
                     </div>
@@ -154,8 +150,8 @@
                     </div>
                 </article>
 
-                <!-- Case 3: プール付き邸宅 -->
-                <article class="reveal group cursor-pointer">
+                <!-- Case 3 -->
+                <article class="group cursor-pointer">
                     <div class="img-zoom-container aspect-[16/10] mb-6 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1984&auto=format&fit=crop" alt="Luxury Pool House" class="w-full h-full object-cover img-zoom">
                     </div>
@@ -168,8 +164,8 @@
                     </div>
                 </article>
 
-                <!-- Case 4: 和モダン -->
-                <article class="reveal transition delay-200 group cursor-pointer md:mt-20">
+                <!-- Case 4 -->
+                <article class="group cursor-pointer md:mt-20">
                     <div class="img-zoom-container aspect-[16/10] mb-6 overflow-hidden">
                         <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop" alt="Minimalist House" class="w-full h-full object-cover img-zoom">
                     </div>
@@ -183,7 +179,7 @@
                 </article>
             </div>
             
-            <div class="text-center mt-20 reveal">
+            <div class="text-center mt-20">
                 <a href="#" class="inline-block px-12 py-4 border border-gray-400 text-sm font-eng tracking-widest hover:bg-gray-900 hover:text-white transition duration-500">
                     View All Projects
                 </a>
@@ -194,19 +190,19 @@
     <!-- Model House / CTA -->
     <section id="modelhouse" class="py-32 relative bg-gray-900 text-white">
         <div class="absolute inset-0 opacity-40">
-            <!-- 夜景・邸宅イメージ -->
+            <!-- 夜景イメージ -->
             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Night View" class="w-full h-full object-cover">
         </div>
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
-            <span class="text-xs font-eng tracking-[0.3em] text-gray-300 block mb-6 reveal">EXPERIENCE</span>
-            <h2 class="text-4xl md:text-5xl font-light leading-snug mb-10 reveal transition delay-100">
+            <span class="text-xs font-eng tracking-[0.3em] text-gray-300 block mb-6">EXPERIENCE</span>
+            <h2 class="text-4xl md:text-5xl font-light leading-snug mb-10">
                 その美しさを、<br>五感で確かめる。
             </h2>
-            <p class="text-gray-300 leading-relaxed mb-12 reveal transition delay-200">
+            <p class="text-gray-300 leading-relaxed mb-12">
                 プライベートモデルハウス「The Residence」を公開しております。<br>
                 完全予約制にて、一組様ずつ丁寧にご案内いたします。
             </p>
-            <div class="reveal transition delay-300">
+            <div>
                 <a href="#contact" class="inline-block bg-white text-gray-900 px-10 py-5 font-eng tracking-widest text-sm hover:bg-gray-200 transition duration-300 min-w-[200px]">
                     Reserve A Visit
                 </a>
@@ -233,3 +229,55 @@
             <div class="flex gap-12 md:gap-24 text-sm font-eng tracking-widest text-gray-600">
                 <div class="flex flex-col gap-4">
                     <a href="#" class="hover:text-black transition">About Us</a>
+                    <a href="#" class="hover:text-black transition">Projects</a>
+                    <a href="#" class="hover:text-black transition">Architects</a>
+                </div>
+                <div class="flex flex-col gap-4">
+                    <a href="#" class="hover:text-black transition">Process</a>
+                    <a href="#" class="hover:text-black transition">News</a>
+                    <a href="#" class="hover:text-black transition">Contact</a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-200 text-center md:text-left">
+            <p class="text-xs text-gray-400 font-eng">&copy; 2024 Noble House Architects. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Interactions (アニメーション削除版) -->
+    <script>
+        // スクロール時のヘッダー背景変更のみ残す
+        const header = document.getElementById('header');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+
+        // モバイルメニュー制御
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+        let isMenuOpen = false;
+
+        menuBtn.addEventListener('click', () => {
+            isMenuOpen = !isMenuOpen;
+            if (isMenuOpen) {
+                mobileMenu.classList.remove('translate-x-full');
+            } else {
+                mobileMenu.classList.add('translate-x-full');
+            }
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                isMenuOpen = false;
+                mobileMenu.classList.add('translate-x-full');
+            });
+        });
+    </script>
+
+</body>
+</html>
