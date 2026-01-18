@@ -6,12 +6,13 @@
     <title>Noble House | 邸宅という名のアート</title>
     <meta name="description" content="すべては、美しく住まうために。Noble Houseは、建築家と共に創る完全自由設計の高級注文住宅ブランドです。">
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: 上品な明朝体(Shippori Mincho)と、洗練された英語フォント(Cinzel) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts: 上品な明朝体、英語フォント、署名用の筆記体 -->
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Shippori+Mincho:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         /* ベース設定 */
         body { font-family: 'Shippori Mincho', serif; }
         .font-eng { font-family: 'Cinzel', serif; }
+        .font-sign { font-family: 'Great Vibes', cursive; } /* 署名用フォント */
         
         /* スクロールアニメーション用クラス */
         .reveal { opacity: 0; transform: translateY(30px); transition: all 1s cubic-bezier(0.16, 1, 0.3, 1); }
@@ -67,8 +68,8 @@
     <!-- ヒーローセクション -->
     <section class="relative h-screen overflow-hidden">
         <div class="absolute inset-0">
-            <!-- ヒーロー画像 (建築写真) -->
-            <img src="https://images.unsplash.com/photo-1600596542815-374e3bb098fa?q=80&w=2072&auto=format&fit=crop" alt="Luxury Living Room" class="w-full h-full object-cover animate-[kenburns_20s_infinite_alternate]">
+            <!-- ヒーロー画像 (モダンリビング) -->
+            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop" alt="Luxury Living Room" class="w-full h-full object-cover">
             <div class="absolute inset-0 bg-black/20"></div>
         </div>
         <div class="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-6">
@@ -102,10 +103,12 @@
                     お客様一人ひとりの美意識を空間に映し出し、
                     50年、100年と愛され続ける「経年優化」する住まいを創造します。
                 </p>
-                <img src="https://images.unsplash.com/photo-1631679706909-1844bbd07221?q=80&w=1992&auto=format&fit=crop" alt="Signature" class="h-12 opacity-50">
+                <!-- 画像ではなくテキストで署名を表示 -->
+                <p class="text-4xl text-gray-400 font-sign opacity-80">Noble House Architects</p>
             </div>
             <div class="md:w-1/2 relative reveal transition delay-200">
                 <div class="img-zoom-container aspect-[3/4]">
+                    <!-- 縦長の建築画像 -->
                     <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop" alt="Japanese Modern Architecture" class="w-full h-full object-cover img-zoom">
                 </div>
                 <!-- 装飾的な背景ボックス -->
@@ -123,10 +126,10 @@
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
-                <!-- Case 1 -->
+                <!-- Case 1: モダン外観 -->
                 <article class="reveal group cursor-pointer">
                     <div class="img-zoom-container aspect-[16/10] mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="House 1" class="w-full h-full object-cover img-zoom">
+                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop" alt="Modern House Exterior" class="w-full h-full object-cover img-zoom">
                     </div>
                     <div class="flex justify-between items-end border-b border-gray-200 pb-4 group-hover:border-gray-900 transition duration-500">
                         <div>
@@ -137,10 +140,10 @@
                     </div>
                 </article>
 
-                <!-- Case 2 -->
+                <!-- Case 2: インテリア -->
                 <article class="reveal transition delay-200 group cursor-pointer md:mt-20">
                     <div class="img-zoom-container aspect-[16/10] mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?q=80&w=1974&auto=format&fit=crop" alt="House 2" class="w-full h-full object-cover img-zoom">
+                        <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?q=80&w=2070&auto=format&fit=crop" alt="Modern Interior" class="w-full h-full object-cover img-zoom">
                     </div>
                     <div class="flex justify-between items-end border-b border-gray-200 pb-4 group-hover:border-gray-900 transition duration-500">
                         <div>
@@ -151,10 +154,10 @@
                     </div>
                 </article>
 
-                <!-- Case 3 -->
+                <!-- Case 3: プール付き邸宅 -->
                 <article class="reveal group cursor-pointer">
                     <div class="img-zoom-container aspect-[16/10] mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1613545325278-f24b0cae1224?q=80&w=2070&auto=format&fit=crop" alt="House 3" class="w-full h-full object-cover img-zoom">
+                        <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?q=80&w=1984&auto=format&fit=crop" alt="Luxury Pool House" class="w-full h-full object-cover img-zoom">
                     </div>
                     <div class="flex justify-between items-end border-b border-gray-200 pb-4 group-hover:border-gray-900 transition duration-500">
                         <div>
@@ -165,10 +168,10 @@
                     </div>
                 </article>
 
-                <!-- Case 4 -->
+                <!-- Case 4: 和モダン -->
                 <article class="reveal transition delay-200 group cursor-pointer md:mt-20">
                     <div class="img-zoom-container aspect-[16/10] mb-6 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1606744888344-49323865621e?q=80&w=2000&auto=format&fit=crop" alt="House 4" class="w-full h-full object-cover img-zoom">
+                        <img src="https://images.unsplash.com/photo-1600607687644-c7171b42498f?q=80&w=2070&auto=format&fit=crop" alt="Minimalist House" class="w-full h-full object-cover img-zoom">
                     </div>
                     <div class="flex justify-between items-end border-b border-gray-200 pb-4 group-hover:border-gray-900 transition duration-500">
                         <div>
@@ -191,6 +194,7 @@
     <!-- Model House / CTA -->
     <section id="modelhouse" class="py-32 relative bg-gray-900 text-white">
         <div class="absolute inset-0 opacity-40">
+            <!-- 夜景・邸宅イメージ -->
             <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?q=80&w=2070&auto=format&fit=crop" alt="Night View" class="w-full h-full object-cover">
         </div>
         <div class="relative z-10 max-w-4xl mx-auto px-6 text-center">
@@ -229,73 +233,3 @@
             <div class="flex gap-12 md:gap-24 text-sm font-eng tracking-widest text-gray-600">
                 <div class="flex flex-col gap-4">
                     <a href="#" class="hover:text-black transition">About Us</a>
-                    <a href="#" class="hover:text-black transition">Projects</a>
-                    <a href="#" class="hover:text-black transition">Architects</a>
-                </div>
-                <div class="flex flex-col gap-4">
-                    <a href="#" class="hover:text-black transition">Process</a>
-                    <a href="#" class="hover:text-black transition">News</a>
-                    <a href="#" class="hover:text-black transition">Contact</a>
-                </div>
-            </div>
-        </div>
-        <div class="max-w-7xl mx-auto mt-16 pt-8 border-t border-gray-200 text-center md:text-left">
-            <p class="text-xs text-gray-400 font-eng">&copy; 2024 Noble House Architects. All Rights Reserved.</p>
-        </div>
-    </footer>
-
-    <!-- JavaScript Interactions -->
-    <script>
-        // スクロール時のヘッダー背景変更
-        const header = document.getElementById('header');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // スクロールフェードインアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: "0px 0px -50px 0px"
-        };
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target); // 一度表示したら監視終了
-                }
-            });
-        }, observerOptions);
-
-        document.querySelectorAll('.reveal').forEach(el => {
-            observer.observe(el);
-        });
-
-        // モバイルメニュー制御
-        const menuBtn = document.getElementById('menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
-        let isMenuOpen = false;
-
-        menuBtn.addEventListener('click', () => {
-            isMenuOpen = !isMenuOpen;
-            if (isMenuOpen) {
-                mobileMenu.classList.remove('translate-x-full');
-            } else {
-                mobileMenu.classList.add('translate-x-full');
-            }
-        });
-
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                isMenuOpen = false;
-                mobileMenu.classList.add('translate-x-full');
-            });
-        });
-    </script>
-
-</body>
-</html>
