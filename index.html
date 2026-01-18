@@ -4,172 +4,127 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noble House | 邸宅という名のアート</title>
-    <meta name="description" content="すべては、美しく住まうために。Noble Houseは、建築家と共に創る完全自由設計の高級注文住宅ブランドです。">
-    
     <!-- Tailwind CSS (デザイン用) -->
     <script src="https://cdn.tailwindcss.com"></script>
-    
-    <!-- Google Fonts (フォント読み込み) -->
+    <!-- Google Fonts (フォント) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Shippori+Mincho:wght@400;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
     
     <style>
-        /* 基本フォント設定 */
+        /* フォント設定：明朝体をベースに高級感を出す */
         body { 
-            font-family: 'Shippori Mincho', 'Hiragino Mincho ProN', serif; 
-            background-color: #FDFBF7;
-            color: #1f2937; /* gray-800 */
+            font-family: 'Shippori Mincho', serif; 
+            color: #111827; /* 真っ黒ではない深いグレー */
         }
-        .font-eng { font-family: 'Cinzel', serif; }
-        .font-sign { font-family: 'Great Vibes', cursive; }
-        
-        /* 画像のズーム効果 */
-        .img-zoom-container { overflow: hidden; }
-        .img-zoom { transition: transform 1.5s ease; }
-        .img-zoom-container:hover .img-zoom { transform: scale(1.05); }
-
-        /* ナビゲーション背景 */
-        header.scrolled { 
-            background-color: rgba(255, 255, 255, 0.98); 
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); 
-            padding-top: 1rem; 
-            padding-bottom: 1rem; 
+        .font-eng { 
+            font-family: 'Cormorant Garamond', serif; 
         }
-
-        /* 確実に隠すためのクラス */
-        .menu-hidden { display: none !important; }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-white">
 
-    <!-- ヘッダー -->
-    <header id="header" class="fixed w-full top-0 z-50 transition-all duration-300 py-6">
-        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+    <!-- ヘッダー (固定せず、スクロールで消えるシンプルな形式に変更して干渉を防ぐ) -->
+    <header class="w-full bg-white py-6 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
             <!-- ロゴ -->
-            <a href="#" class="z-50 group block">
-                <h1 class="text-2xl font-eng font-semibold tracking-widest text-gray-900">NOBLE HOUSE</h1>
-                <p class="text-[10px] tracking-[0.3em] uppercase text-gray-500">Architects</p>
-            </a>
+            <div class="text-center md:text-left">
+                <h1 class="text-3xl font-eng font-bold tracking-widest text-black">NOBLE HOUSE</h1>
+                <p class="text-[10px] tracking-[0.4em] uppercase text-gray-500 mt-1">Architects</p>
+            </div>
 
-            <!-- PC用ナビ -->
-            <nav class="hidden md:flex space-x-12 items-center text-sm tracking-widest text-gray-800">
-                <a href="#concept" class="hover:text-gray-500 transition border-b border-transparent hover:border-gray-400">Concept</a>
-                <a href="#works" class="hover:text-gray-500 transition border-b border-transparent hover:border-gray-400">Works</a>
-                <a href="#modelhouse" class="hover:text-gray-500 transition border-b border-transparent hover:border-gray-400">Model House</a>
-                <a href="#contact" class="px-6 py-3 border border-gray-800 hover:bg-gray-800 hover:text-white transition duration-300">Contact</a>
+            <!-- ナビゲーション -->
+            <nav class="flex space-x-8 text-sm tracking-widest text-gray-600">
+                <a href="#concept" class="hover:text-black hover:underline underline-offset-4 transition">CONCEPT</a>
+                <a href="#works" class="hover:text-black hover:underline underline-offset-4 transition">WORKS</a>
+                <a href="#contact" class="hover:text-black hover:underline underline-offset-4 transition">CONTACT</a>
             </nav>
-
-            <!-- スマホ用メニューボタン -->
-            <button id="menu-btn" class="md:hidden z-50 p-2 space-y-1.5 cursor-pointer">
-                <span class="block w-6 h-[2px] bg-gray-900 transition-all duration-300" id="bar1"></span>
-                <span class="block w-6 h-[2px] bg-gray-900 transition-all duration-300" id="bar2"></span>
-                <span class="block w-6 h-[2px] bg-gray-900 transition-all duration-300" id="bar3"></span>
-            </button>
         </div>
     </header>
 
-    <!-- スマホ用メニュー画面（初期状態は display: none で隠す） -->
-    <div id="mobile-menu" class="fixed inset-0 bg-[#FDFBF7] z-40 flex items-center justify-center menu-hidden">
-        <nav class="text-center space-y-8">
-            <a href="#concept" class="block text-2xl font-eng tracking-widest hover:text-gray-500 mobile-link">Concept</a>
-            <a href="#works" class="block text-2xl font-eng tracking-widest hover:text-gray-500 mobile-link">Works</a>
-            <a href="#modelhouse" class="block text-2xl font-eng tracking-widest hover:text-gray-500 mobile-link">Model House</a>
-            <a href="#contact" class="block text-2xl font-eng tracking-widest hover:text-gray-500 mobile-link">Contact</a>
-        </nav>
-    </div>
-
-    <!-- ヒーローセクション -->
-    <section class="relative h-screen bg-gray-900 overflow-hidden">
-        <!-- 画像 (確実に読み込めるUnsplash IDを使用) -->
-        <div class="absolute inset-0">
-            <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" 
-                 alt="Luxury Living Room" 
-                 class="w-full h-full object-cover opacity-60"> <!-- 画像が明るすぎないように調整 -->
-        </div>
+    <!-- ヒーローセクション (画像の明度を下げて文字を確実に読ませる) -->
+    <section class="relative h-[80vh] w-full bg-gray-900 overflow-hidden">
+        <!-- 画像：明るさを50%に落とす -->
+        <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80" 
+             alt="Hero Image" 
+             class="w-full h-full object-cover brightness-50">
         
-        <div class="relative z-10 h-full flex flex-col justify-center items-center text-center text-white px-6">
-            <p class="text-sm md:text-base tracking-[0.5em] mb-6 font-eng">Timeless Elegance</p>
-            <h2 class="text-4xl md:text-7xl lg:text-8xl font-eng tracking-wider mb-8 font-light">
-                The Art of Living
+        <!-- テキスト：絶対配置 -->
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
+            <p class="font-eng text-lg md:text-xl tracking-[0.2em] mb-4">Timeless Beauty</p>
+            <h2 class="text-4xl md:text-7xl font-light leading-tight mb-8">
+                静寂を、<br>デザインする。
             </h2>
-            <p class="text-lg md:text-2xl font-light tracking-widest">
-                邸宅という名の、芸術を。
-            </p>
-        </div>
-        
-        <!-- スクロールダウン表示 -->
-        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce">
-            <span class="text-[10px] tracking-widest text-white mb-2 uppercase font-eng">Scroll</span>
-            <div class="w-[1px] h-12 bg-white"></div>
+            <div class="h-[1px] w-20 bg-white/50"></div>
         </div>
     </section>
 
-    <!-- Concept -->
-    <section id="concept" class="py-24 md:py-32 px-6">
-        <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-            <div class="md:w-1/2">
-                <span class="text-xs font-eng tracking-[0.3em] text-gray-500 block mb-6">PHILOSOPHY</span>
-                <h3 class="text-3xl md:text-4xl leading-relaxed font-light mb-8 text-gray-900">
-                    余白を愉しみ、<br>
-                    時を紡ぐ家。
-                </h3>
-                <p class="text-gray-700 leading-loose mb-8 text-justify">
-                    私たちが提案するのは、単なる「住む場所」ではありません。<br>
-                    光の移ろいを感じる窓、風が通り抜ける回廊、そして心安らぐ静寂。<br><br>
-                    お客様一人ひとりの美意識を空間に映し出し、
-                    50年、100年と愛され続ける「経年優化」する住まいを創造します。
-                </p>
-                <p class="text-4xl text-gray-400 font-sign">Noble House Architects</p>
+    <!-- コンセプト -->
+    <section id="concept" class="py-24 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-16">
+            <span class="font-eng text-sm tracking-[0.3em] text-gray-500 block mb-4">PHILOSOPHY</span>
+            <h3 class="text-3xl md:text-4xl leading-relaxed">
+                余白のある暮らし。<br>
+                光と風の建築。
+            </h3>
+        </div>
+        
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <!-- 画像 -->
+            <div class="bg-gray-100">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
+                     alt="Architecture Concept" 
+                     class="w-full h-auto object-cover grayscale hover:grayscale-0 transition duration-700">
             </div>
-            <div class="md:w-1/2 w-full">
-                <div class="img-zoom-container aspect-[3/4] bg-gray-200">
-                    <img src="https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80" 
-                         alt="Japanese Modern Architecture" 
-                         class="w-full h-full object-cover img-zoom">
+            <!-- 文章 -->
+            <div class="text-gray-700 leading-loose space-y-6">
+                <p>
+                    家は単なる器ではありません。そこで過ごす時間の質そのものです。
+                    私たちは、流行を追うのではなく、10年後、20年後にさらに美しくなる「経年優化」する住まいを提案します。
+                </p>
+                <p>
+                    素材の手触り、窓から入る光の角度、庭の木々の揺らぎ。
+                    五感に響く繊細な設計で、あなたの人生に寄り添う邸宅を創造します。
+                </p>
+                <div class="pt-4">
+                    <p class="font-eng text-2xl text-gray-400">Noble House Architects</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Works Gallery -->
-    <section id="works" class="py-20 px-6 bg-white">
-        <div class="max-w-7xl mx-auto">
-            <div class="text-center mb-16">
-                <span class="text-xs font-eng tracking-[0.3em] text-gray-500 block mb-4">OUR WORKS</span>
-                <h3 class="text-3xl font-light text-gray-900">建築実例</h3>
+    <!-- 施工事例 (グリッドレイアウト) -->
+    <section id="works" class="py-24 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="flex justify-between items-end mb-12">
+                <div>
+                    <span class="font-eng text-sm tracking-[0.3em] text-gray-500 block mb-2">WORKS</span>
+                    <h3 class="text-3xl font-light">建築実例</h3>
+                </div>
+                <a href="#" class="hidden md:block text-sm border-b border-gray-400 pb-1 hover:border-black transition">View All Projects</a>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 lg:gap-20">
-                <!-- Case 1 -->
-                <article class="group cursor-pointer">
-                    <div class="img-zoom-container aspect-[16/10] mb-6 bg-gray-200">
-                        <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Modern House Exterior" class="w-full h-full object-cover img-zoom">
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- 事例1 -->
+                <article class="bg-white group cursor-pointer shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="overflow-hidden h-64">
+                        <img src="https://images.unsplash.com/photo-1600210492486-724fe5c67fb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" 
+                             alt="Works 1" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
                     </div>
-                    <div class="flex justify-between items-end border-b border-gray-200 pb-4 group-hover:border-gray-900 transition duration-300">
-                        <div>
-                            <p class="text-xs font-eng tracking-widest text-gray-500 mb-2">KARUIZAWA, NAGANO</p>
-                            <h4 class="text-xl font-light text-gray-900">森に浮かぶ、ガラスの邸宅</h4>
-                        </div>
-                        <span class="text-sm font-eng group-hover:translate-x-2 transition duration-300">View More &rarr;</span>
+                    <div class="p-6">
+                        <p class="text-xs font-eng text-gray-500 mb-2 tracking-widest">MINATO-KU, TOKYO</p>
+                        <h4 class="text-lg font-medium">都心の隠れ家</h4>
                     </div>
                 </article>
 
-                <!-- Case 2 -->
-                <article class="group cursor-pointer md:mt-20">
-                    <div class="img-zoom-container aspect-[16/10] mb-6 bg-gray-200">
+                <!-- 事例2 -->
+                <article class="bg-white group cursor-pointer shadow-sm hover:shadow-lg transition duration-300">
+                    <div class="overflow-hidden h-64">
                         <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" 
-                             alt="Modern Interior" class="w-full h-full object-cover img-zoom">
+                             alt="Works 2" 
+                             class="w-full h-full object-cover transform group-hover:scale-105 transition duration-500">
                     </div>
-                    <div class="flex justify-between items-end border-b border-gray-200 pb-4 group-hover:border-gray-900 transition duration-300">
-                        <div>
-                            <p class="text-xs font-eng tracking-widest text-gray-500 mb-2">KAMAKURA, KANAGAWA</p>
-                            <h4 class="text-xl font-light text-gray-900">海を望むガレージハウス</h4>
-                        </div>
-                        <span class="text-sm font-eng group-hover:translate-x-2 transition duration-300">View More &rarr;</span>
-                    </div>
-                </article>
-
-                <!-- Case 3 -->
-                <article class="group curso
+                    <div class="p-6">
+                        <p class="text-xs font-eng text-gray-500 mb-2 tracking-widest">KAMAKURA, KANAGAWA</p>
+                        <h4 class="text-lg font-medi
