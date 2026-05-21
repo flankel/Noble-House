@@ -1,39 +1,64 @@
 {
+  "title": "Noble House | 邸宅という名のアート",
+
+  "header": {
+    "brand": "NOBLE HOUSE",
+    "tagline": "Architects"
+  },
+
+  "nav": {
+    "concept": "CONCEPT",
+    "works": "WORKS",
+    "contact": "CONTACT"
+  },
+
   "hero": {
-    "image": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c",
+    "img": "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2053&q=80",
     "sub": "Timeless Beauty",
     "title": "静寂を、<br>デザインする。"
   },
+
   "concept": {
+    "label": "PHILOSOPHY",
     "title": "余白のある暮らし。<br>光と風の建築。",
-    "image": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    "text": [
-      "家は単なる器ではありません。",
-      "そこに流れる時間そのものを設計すること。",
-      "光、風、素材、そして余白。",
-      "それらが調和することで、本質的な豊かさが生まれます。"
+    "img": "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
+    "text1": "家は単なる器ではありません。そこで過ごす時間の質そのものです。私たちは、流行を追うのではなく、10年後、20年後にさらに美しくなる「経年優化」する住まいを提案します。",
+    "text2": "素材の手触り、窓から入る光の角度、庭の木々の揺らぎ。五感に響く繊細な設計で、あなたの人生に寄り添う邸宅を創造します。",
+    "sign": "Noble House Architects"
+  },
+
+  "works": {
+    "label": "WORKS",
+    "title": "建築実例",
+    "link": "View All Projects",
+    "items": [
+      {
+        "img": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
+        "location": "MINATO-KU, TOKYO",
+        "title": "都心の隠れ家"
+      },
+      {
+        "img": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
+        "location": "KAMAKURA, KANAGAWA",
+        "title": "海を望む邸宅"
+      },
+      {
+        "img": "https://images.unsplash.com/photo-1600607687644-c7171b42498f",
+        "location": "KARUIZAWA, NAGANO",
+        "title": "森のヴィラ"
+      }
     ]
   },
-  "works": [
-    {
-      "image": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
-      "location": "TOKYO",
-      "title": "都心の隠れ家"
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
-      "location": "KAMAKURA",
-      "title": "海を望む邸宅"
-    },
-    {
-      "image": "https://images.unsplash.com/photo-1600607687644-c7171b42498f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80",
-      "location": "KARUIZAWA, NAGANO",
-      "title": "森のヴィラ"
-    }
-  ],
+
   "contact": {
-    "image": "https://images.unsplash.com/photo-1505691938895-1758d7feb511",
     "title": "Start Your Journey",
-    "text": "理想の住まいについて、<br>私たちと共に考えてみませんか。"
+    "text": "理想の住まいづくりについて、まずはお話をお聞かせください。<br>プライベートモデルハウスのご見学も随時受け付けております。",
+    "btn1": "お問い合わせ",
+    "btn2": "資料請求"
+  },
+
+  "footer": {
+    "brand": "NOBLE HOUSE",
+    "address": "〒107-0062 東京都港区南青山 2-15-1"
   }
 }
