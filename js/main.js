@@ -1,5 +1,5 @@
 async function loadContent() {
-    const res = await fetch("content.json");
+    const res = await fetch("/data/content.json");
     const data = await res.json();
 
     document.title = data.title;
