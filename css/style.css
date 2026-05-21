@@ -1,53 +1,83 @@
-/* Fonts */
+/* =========================
+   BASE / TYPOGRAPHY
+========================= */
+
 body {
   font-family: 'Shippori Mincho', serif;
   color: #111827;
+  background: #ffffff;
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
 }
 
 .font-eng {
   font-family: 'Cormorant Garamond', serif;
 }
 
-/* Layout */
+h1, h2, h3 {
+  line-height: 1.3;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+}
+
+p {
+  font-size: 14px;
+  color: #444;
+}
+
+/* =========================
+   LAYOUT SYSTEM
+========================= */
+
 .container {
-  max-width: 1100px;
+  max-width: 1180px;
   margin: auto;
-  padding: 0 24px;
+  padding: 0 28px;
 }
 
 .section {
-  padding: 96px 0;
+  padding: 120px 0;
 }
 
-/* Header */
+/* =========================
+   HEADER
+========================= */
+
 .header {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid #eee;
-  padding: 24px 0;
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+  padding: 20px 0;
 }
 
 .logo {
-  font-size: 28px;
-  letter-spacing: 0.2em;
+  font-size: 26px;
+  letter-spacing: 0.25em;
 }
 
 .logo-sub {
   font-size: 10px;
-  letter-spacing: 0.4em;
-  color: #777;
+  letter-spacing: 0.5em;
+  color: #888;
 }
 
 .nav a {
-  margin-left: 24px;
-  font-size: 12px;
-  letter-spacing: 0.2em;
+  margin-left: 32px;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  color: #222;
 }
 
-/* Hero */
+/* =========================
+   HERO
+========================= */
+
 .hero {
   position: relative;
-  height: 80vh;
+  height: 90vh;
   overflow: hidden;
 }
 
@@ -55,13 +85,8 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(50%);
-  animation: zoom 20s linear infinite;
-}
-
-@keyframes zoom {
-  from { transform: scale(1.05); }
-  to { transform: scale(1.15); }
+  filter: brightness(55%);
+  transform: scale(1.08);
 }
 
 .hero-content {
@@ -72,54 +97,162 @@ body {
   justify-content: center;
   align-items: center;
   color: white;
-  text-align: center;
 }
 
 .hero-title {
-  font-size: 56px;
+  font-size: 64px;
   line-height: 1.4;
+  text-align: center;
 }
 
 .hero-sub {
-  letter-spacing: 0.2em;
+  letter-spacing: 0.3em;
   color: #c8a96a;
+  margin-bottom: 16px;
 }
 
-/* Animation */
-.fade-up {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: 0.8s;
+.hero-line {
+  width: 60px;
+  height: 1px;
+  background: rgba(255,255,255,0.6);
+  margin-top: 24px;
 }
 
-.fade-up.show {
-  opacity: 1;
-  transform: translateY(0);
+/* =========================
+   CONCEPT (REAL DESIGN)
+========================= */
+
+.concept-wrap {
+  padding: 140px 0;
 }
 
-/* Works */
+.concept-img {
+  width: 100%;
+  height: 560px;
+  object-fit: cover;
+}
+
+.concept-card {
+  background: white;
+  padding: 60px;
+  box-shadow: 0 30px 70px rgba(0,0,0,0.08);
+}
+
+.concept-label {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  color: #999;
+}
+
+.concept-title {
+  font-size: 36px;
+  line-height: 1.6;
+  margin: 20px 0 30px;
+}
+
+.concept-body p {
+  margin-bottom: 16px;
+  line-height: 2;
+  color: #444;
+}
+
+/* =========================
+   WORKS
+========================= */
+
 .works {
-  background: #f9fafb;
-  padding: 96px 0;
+  background: #f7f7f7;
+  padding: 140px 0;
+}
+
+.works-header {
+  margin-bottom: 60px;
+}
+
+.section-label {
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #999;
 }
 
 .card {
   background: white;
-  transition: 0.4s;
+  transition: all 0.5s ease;
+}
+
+.card img {
+  transition: transform 1.2s ease;
 }
 
 .card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+  transform: translateY(-12px);
+  box-shadow: 0 30px 60px rgba(0,0,0,0.12);
 }
 
-/* Typography rhythm */
-h1, h2, h3 {
-  line-height: 1.3;
-  letter-spacing: 0.05em;
+.card:hover img {
+  transform: scale(1.08);
 }
 
-/* Subtle luxury hover */
+/* =========================
+   CONTACT (MINIMAL LUXURY)
+========================= */
+
+.contact-wrap {
+  padding: 180px 0;
+  background: #fafafa;
+}
+
+.contact-label {
+  font-size: 11px;
+  letter-spacing: 0.35em;
+  color: #aaa;
+}
+
+.contact-title {
+  font-size: 44px;
+  margin: 20px 0;
+}
+
+.contact-desc {
+  max-width: 520px;
+  margin: 0 auto 40px;
+  color: #555;
+}
+
+/* Link instead of button */
+.contact-link {
+  font-size: 13px;
+  letter-spacing: 0.25em;
+  display: inline-block;
+}
+
+.contact-link .arrow {
+  margin-left: 10px;
+  transition: 0.3s;
+}
+
+.contact-link:hover .arrow {
+  transform: translateX(8px);
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+  padding: 40px 0;
+  border-top: 1px solid #eee;
+}
+
+.footer-text {
+  font-size: 12px;
+  color: #777;
+}
+
+/* =========================
+   INTERACTIONS
+========================= */
+
 a {
   position: relative;
 }
@@ -139,3 +272,17 @@ a:hover::after {
   width: 100%;
 }
 
+/* =========================
+   ANIMATION BASE
+========================= */
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.9s cubic-bezier(0.22,1,0.36,1);
+}
+
+.fade-up.show {
+  opacity: 1;
+  transform: translateY(0);
+}
