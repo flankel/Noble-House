@@ -1,27 +1,21 @@
+import { initAnimations } from './animations.js';
+import { renderWorks } from './components.js';
 
-// Scroll animation
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+  const data = await fetchData();
 
-  const elements = document.querySelectorAll(".fade-up");
+  hydrateContent(data);
+  renderWorks(data.works);
 
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        entry.target.classList.add("show");
-      }
-    });
-  });
-
-  elements.forEach(el => observer.observe(el));
-
-  loadContent();
+  initAnimations();
 });
 
-
-// Load JSON
-async function loadContent() {
+async function fetchData() {
   const res = await fetch("data/content.json");
-  const data = await res.json();
+  return await res.json();
+}
+
+function hydrateContent(data) {
 
   // HERO
   document.getElementById("hero-img").src = data.hero.image;
@@ -33,33 +27,13 @@ async function loadContent() {
   document.getElementById("concept-img").src = data.concept.image;
 
   const conceptText = document.getElementById("concept-text");
+  conceptText.innerHTML = "";
   data.concept.text.forEach(p => {
-    const el = document.createElement("p");
-    el.textContent = p;
-    conceptText.appendChild(el);
-  });
-
-  // WORKS
-  const grid = document.getElementById("works-grid");
-
-  data.works.forEach(w => {
-    const card = document.createElement("div");
-    card.className = "card";
-
-    card.innerHTML = `
-      <div class="overflow-hidden h-64">
-        <img src="${w.image}" class="w-full h-full object-cover">
-      </div>
-      <div class="p-6">
-        <p class="text-xs text-gray-500">${w.location}</p>
-        <h4>${w.title}</h4>
-      </div>
-    `;
-
-    grid.appendChild(card);
+    conceptText.innerHTML += `<p>${p}</p>`;
   });
 
   // CONTACT
+  document.getElementById("contact-img").src = data.contact.image;
   document.getElementById("contact-title").textContent = data.contact.title;
   document.getElementById("contact-text").innerHTML = data.contact.text;
 }
