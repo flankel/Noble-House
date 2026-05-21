@@ -24,13 +24,13 @@
 
   <!-- HEADER -->
   <header class="header">
-    <div class="container flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="text-center md:text-left">
+    <div class="container flex justify-between items-center">
+      <div>
         <h1 class="logo">NOBLE HOUSE</h1>
         <p class="logo-sub">Architects</p>
       </div>
 
-      <nav class="nav">
+      <nav class="nav hidden md:flex">
         <a href="#concept">CONCEPT</a>
         <a href="#works">WORKS</a>
         <a href="#contact">CONTACT</a>
@@ -42,67 +42,85 @@
   <section class="hero">
     <img id="hero-img" class="hero-img" loading="lazy">
 
-    <div class="hero-content fade-up">
-      <p id="hero-sub" class="hero-sub"></p>
-      <h2 id="hero-title" class="hero-title"></h2>
-      <div class="divider"></div>
+    <div class="hero-content">
+      <p id="hero-sub" class="hero-sub fade-up"></p>
+
+      <h2 id="hero-title" class="hero-title fade-up"></h2>
+
+      <div class="hero-line fade-up"></div>
     </div>
   </section>
 
-  <!-- CONCEPT (UPDATED) -->
-  <section id="concept" class="concept-section">
+  <!-- CONCEPT (REAL DESIGN FIX) -->
+  <section id="concept" class="concept-wrap">
 
-    <div class="concept-bg"></div>
+    <div class="container grid md:grid-cols-12 gap-10 items-center">
 
-    <div class="container grid md:grid-cols-2 gap-16 items-center relative z-10">
-
-      <div class="concept-text-wrap fade-up">
-        <span class="section-label">PHILOSOPHY</span>
-        <h3 id="concept-title" class="concept-title"></h3>
-        <div class="concept-line"></div>
-        <div id="concept-text" class="concept-desc"></div>
+      <!-- IMAGE -->
+      <div class="col-span-12 md:col-span-7 fade-up">
+        <img id="concept-img" class="concept-img" loading="lazy">
       </div>
 
-      <div class="concept-image-wrap fade-up">
-        <img id="concept-img" loading="lazy">
+      <!-- TEXT -->
+      <div class="col-span-12 md:col-span-5 md:-ml-16 fade-up">
+
+        <div class="concept-card">
+
+          <span class="concept-label">PHILOSOPHY</span>
+
+          <h3 id="concept-title" class="concept-title"></h3>
+
+          <div id="concept-text" class="concept-body"></div>
+
+        </div>
+
       </div>
 
     </div>
   </section>
 
   <!-- WORKS -->
-  <section id="works" class="works fade-up">
+  <section id="works" class="works">
+
     <div class="container">
-      <div class="flex justify-between items-end mb-12">
-        <div>
-          <span class="section-label">WORKS</span>
-          <h3>建築実例</h3>
-        </div>
+
+      <div class="works-header fade-up">
+        <span class="section-label">WORKS</span>
+        <h3>建築実例</h3>
       </div>
 
-      <div id="works-grid" class="grid md:grid-cols-3 gap-8"></div>
+      <div id="works-grid" class="grid md:grid-cols-3 gap-10"></div>
+
     </div>
+
   </section>
 
-  <!-- CONTACT (UPDATED) -->
-  <section id="contact" class="contact-section">
+  <!-- CONTACT (MINIMAL LUXURY) -->
+  <section id="contact" class="contact-wrap">
 
-    <div class="contact-bg">
-      <img id="contact-img" loading="lazy">
-    </div>
+    <div class="container fade-up text-center">
 
-    <div class="contact-overlay"></div>
-
-    <div class="container text-center relative z-10 fade-up">
-      <span class="section-label text-gray-300">CONTACT</span>
+      <span class="contact-label">CONTACT</span>
 
       <h3 id="contact-title" class="contact-title"></h3>
 
-      <p id="contact-text" class="contact-text"></p>
+      <p id="contact-text" class="contact-desc"></p>
 
-      <a href="#" class="contact-btn">Contact Us</a>
+      <a href="#" class="contact-link">
+        Contact Us
+        <span class="arrow">→</span>
+      </a>
+
     </div>
+
   </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container text-center">
+      <p class="footer-text">© Noble House Architects</p>
+    </div>
+  </footer>
 
   <!-- JS -->
   <script type="module" src="js/main.js"></script>
