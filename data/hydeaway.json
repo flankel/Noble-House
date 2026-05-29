@@ -1,34 +1,34 @@
 {
   "title": "都心の隠れ家",
   "subtitle": "Urban Hideaway Residence",
-  "hero": "images/exterior.jpg",
+  "hero": "images/exterior.png",
 
   "conceptTitle": "静寂と光が共存する空間",
   "conceptText": "都会の喧騒から切り離された設計。外に閉じ、内に開くことで、プライバシーと開放感を両立した住まい。",
 
   "images": [
     {
-      "src": "images/interior1.jpg",
+      "src": "images/interior1.png",
       "label": "リビング",
       "category": "interior"
     },
     {
-      "src": "images/interior2.jpg",
+      "src": "images/interior2.png",
       "label": "ダイニング",
       "category": "interior"
     },
     {
-      "src": "images/interior3.jpg",
+      "src": "images/interior3.png",
       "label": "寝室",
       "category": "interior"
     },
     {
-      "src": "images/interior4.jpg",
+      "src": "images/interior4.png",
       "label": "中庭",
       "category": "exterior"
     },
     {
-      "src": "images/exterior.jpg",
+      "src": "images/exterior.png",
       "label": "外観",
       "category": "exterior"
     }
