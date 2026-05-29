@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>都心の隠れ家 | Noble House</title>
+
+<link rel="stylesheet" href="css/hideaway.css">
+
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <img id="hero-img">
+  <div class="hero-text">
+    <h1 id="title"></h1>
+    <p id="subtitle"></p>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept fade">
+  <h2 id="concept-title"></h2>
+  <p id="concept-text"></p>
+</section>
+
+<!-- CATEGORY -->
+<section class="category">
+  <button onclick="filterGallery('all')" class="active">ALL</button>
+  <button onclick="filterGallery('interior')">内装</button>
+  <button onclick="filterGallery('exterior')">外観</button>
+  <button onclick="filterGallery('night')">夜景</button>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery">
+  <div id="grid"></div>
+</section>
+
+<!-- MODAL -->
+<div id="modal" onclick="closeModal()">
+  <img id="modal-img">
+</div>
+
+<script src="js/hideaway.js"></script>
+</body>
+</html>
