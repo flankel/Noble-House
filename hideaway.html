@@ -13,7 +13,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <img id="hero-img">
+  <img id="hero-img" alt="">
   <div class="hero-text">
     <h1 id="title"></h1>
     <p id="subtitle"></p>
@@ -28,10 +28,10 @@
 
 <!-- CATEGORY -->
 <section class="category">
-  <button onclick="filterGallery('all')" class="active">ALL</button>
-  <button onclick="filterGallery('interior')">内装</button>
-  <button onclick="filterGallery('exterior')">外観</button>
-  <button onclick="filterGallery('night')">夜景</button>
+  <button onclick="filterGallery(event,'all')" class="active">ALL</button>
+  <button onclick="filterGallery(event,'interior')">内装</button>
+  <button onclick="filterGallery(event,'exterior')">外観</button>
+  <button onclick="filterGallery(event,'night')">夜景</button>
 </section>
 
 <!-- GALLERY -->
