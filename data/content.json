@@ -35,17 +35,20 @@
       {
         "img": "https://images.unsplash.com/photo-1600210492486-724fe5c67fb0",
         "location": "MINATO-KU, TOKYO",
-        "title": "都心の隠れ家"
+        "title": "都心の隠れ家",
+        "link": "hideaway.html"
       },
       {
         "img": "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3",
         "location": "KAMAKURA, KANAGAWA",
-        "title": "海を望む邸宅"
+        "title": "海を望む邸宅",
+        "link": "ocean.html"
       },
       {
         "img": "https://images.unsplash.com/photo-1600607687644-c7171b42498f",
         "location": "KARUIZAWA, NAGANO",
-        "title": "森のヴィラ"
+        "title": "森のヴィラ",
+        "link": "villa.html"
       }
     ]
   },
