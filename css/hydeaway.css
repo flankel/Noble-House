@@ -1,71 +1,107 @@
+/* =========================
+   BASE
+========================= */
 body {
   margin: 0;
-  font-family: serif;
-  background: #0f0f0f;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background: #111;
   color: #fff;
+  line-height: 1.8;
 }
 
-/* HERO */
+/* =========================
+   HERO
+========================= */
 .hero {
-  height: 90vh;
   position: relative;
+  height: 100vh;
   overflow: hidden;
 }
 
 .hero img {
   width: 100%;
-  height: 110%;
+  height: 100%;
   object-fit: cover;
-  filter: brightness(0.6);
-  transform: translateY(0);
-  transition: transform 0.2s;
+  transform: scale(1.05);
 }
 
 .hero-text {
   position: absolute;
-  bottom: 10%;
+  bottom: 12%;
   left: 8%;
+  max-width: 600px;
 }
 
-.hero-text h1 {
-  font-size: 48px;
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  margin: 0;
 }
 
-/* CONCEPT */
+.hero p {
+  margin-top: 10px;
+  opacity: 0.7;
+  font-size: 0.95rem;
+}
+
+/* =========================
+   CONCEPT
+========================= */
 .concept {
-  text-align: center;
-  padding: 80px 20px;
+  padding: 120px 10%;
+  max-width: 900px;
 }
 
-/* CATEGORY */
-.category {
-  text-align: center;
+.concept h2 {
+  font-size: 1.6rem;
+  font-weight: 400;
   margin-bottom: 30px;
 }
 
-.category button {
-  margin: 5px;
-  padding: 10px 20px;
-  background: transparent;
-  border: 1px solid #fff;
-  color: #fff;
-  cursor: pointer;
+.concept p {
+  opacity: 0.8;
 }
 
-.category .active {
+/* =========================
+   CATEGORY
+========================= */
+.category {
+  padding: 60px 10%;
+  display: flex;
+  gap: 12px;
+}
+
+.category button {
+  padding: 10px 24px;
+  background: transparent;
+  border: 1px solid #555;
+  color: #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.category button:hover {
+  border-color: #fff;
+  color: #fff;
+}
+
+.category button.active {
   background: #fff;
   color: #000;
 }
 
-/* GALLERY */
+/* =========================
+   GALLERY
+========================= */
 .gallery {
-  padding: 40px 5%;
+  padding: 40px 10% 100px;
 }
 
 #grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
 }
 
 .item {
@@ -76,41 +112,53 @@ body {
 
 .item img {
   width: 100%;
+  height: 320px;
+  object-fit: cover;
   transition: 0.5s;
 }
 
 .item:hover img {
-  transform: scale(1.1);
+  transform: scale(1.08);
 }
 
 .item span {
   position: absolute;
-  bottom: 10px;
-  left: 10px;
+  bottom: 15px;
+  left: 15px;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
   background: rgba(0,0,0,0.6);
-  padding: 5px 10px;
+  padding: 6px 12px;
 }
 
-/* MODAL */
+/* =========================
+   MODAL
+========================= */
 #modal {
-  display: none;
   position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.9);
+  background: rgba(0,0,0,0.92);
+  display: none;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 #modal img {
-  max-width: 80%;
+  max-width: 90%;
+  max-height: 90%;
 }
 
-/* FADE */
+/* =========================
+   FADE
+========================= */
 .fade {
   opacity: 0;
   transform: translateY(40px);
-  transition: 1s;
+  transition: 1.2s ease;
 }
 
 .fade.show {
