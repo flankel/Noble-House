@@ -28,7 +28,8 @@ function renderAll() {
   document.getElementById("concept-title").textContent = DATA.conceptTitle;
   document.getElementById("concept-text").textContent = DATA.conceptText;
 
-  document.getElementById("hero-img").src = DATA.hero;
+  const heroImg = document.getElementById("hero-img");
+  heroImg.src = DATA.hero;
 
   renderGallery("all");
 }
@@ -48,25 +49,34 @@ function renderGallery(type) {
       const div = document.createElement("div");
       div.className = "item fade";
 
-      div.innerHTML = `
-        <img src="${img.src}" loading="lazy">
-        <span>${img.label}</span>
-      `;
+      const image = document.createElement("img");
+      image.src = img.src;
+      image.loading = "lazy";
+
+      const label = document.createElement("span");
+      label.textContent = img.label;
+
+      div.appendChild(image);
+      div.appendChild(label);
 
       div.onclick = () => openModal(img.src);
 
       grid.appendChild(div);
     });
+
+  initScrollFade(); // 再適用
 }
 
 /* =========================
    フィルター
 ========================= */
-function filterGallery(type) {
+function filterGallery(e, type) {
+
   document.querySelectorAll(".category button")
     .forEach(btn => btn.classList.remove("active"));
 
-  event.target.classList.add("active");
+  e.target.classList.add("active");
+
   renderGallery(type);
 }
 
@@ -88,6 +98,8 @@ function closeModal() {
 ========================= */
 function initScrollFade() {
 
+  const elements = document.querySelectorAll(".fade");
+
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
@@ -96,7 +108,7 @@ function initScrollFade() {
     });
   });
 
-  document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+  elements.forEach(el => observer.observe(el));
 }
 
 /* =========================
@@ -106,6 +118,8 @@ function initParallax() {
 
   window.addEventListener("scroll", () => {
     const img = document.querySelector(".hero img");
+    if (!img) return;
+
     const scroll = window.scrollY;
     img.style.transform = `translateY(${scroll * 0.3}px)`;
   });
