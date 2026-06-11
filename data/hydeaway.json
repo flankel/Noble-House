@@ -1,7 +1,10 @@
 {
   "title": "都心の隠れ家",
   "subtitle": "Urban Hideaway Residence",
+
   "hero": "images/hideaway/exterior.png",
+
+  "panorama": "images/hideaway/360.jpg",
 
   "conceptTitle": "静寂と光が共存する空間",
   "conceptText": "都会の喧騒から切り離された設計。外に閉じ、内に開くことで、プライバシーと開放感を両立した住まい。",
@@ -32,5 +35,12 @@
       "label": "外観",
       "category": "exterior"
     }
-  ]
+  ],
+
+  "info": {
+    "location": "Tokyo",
+    "type": "Private Residence",
+    "year": "2025",
+    "architect": "Noble House Architects"
+  }
 }
