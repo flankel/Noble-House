@@ -7,9 +7,11 @@ document.addEventListener("DOMContentLoaded", async () => {
   try {
     await loadData();
     renderAll();
+
     initScrollFade();
     initParallax();
     init360Viewer();
+
   } catch (e) {
     console.error("初期化エラー:", e);
   }
@@ -32,17 +34,19 @@ async function loadData() {
    描画
 ========================= */
 function renderAll() {
-
   if (!DATA) return;
 
+  // テキスト
   document.getElementById("title").textContent = DATA.title || "";
   document.getElementById("subtitle").textContent = DATA.subtitle || "";
   document.getElementById("concept-title").textContent = DATA.conceptTitle || "";
   document.getElementById("concept-text").textContent = DATA.conceptText || "";
 
+  // HERO画像
   const heroImg = document.getElementById("hero-img");
   heroImg.src = DATA.hero;
 
+  // ギャラリー
   renderGallery("all");
 }
 
@@ -50,10 +54,9 @@ function renderAll() {
    360ビュー
 ========================= */
 function init360Viewer() {
-
   if (!DATA.panorama) return;
 
-  pannellum.viewer('panorama', {
+  pannellum.viewer("panorama", {
     type: "equirectangular",
     panorama: DATA.panorama,
     autoLoad: true,
@@ -62,10 +65,9 @@ function init360Viewer() {
 }
 
 /* =========================
-   ギャラリー
+   ギャラリー描画
 ========================= */
 function renderGallery(type) {
-
   if (!DATA || !DATA.images) return;
 
   const grid = document.getElementById("grid");
@@ -75,8 +77,8 @@ function renderGallery(type) {
     .filter(img => type === "all" || img.category === type)
     .forEach(img => {
 
-      const div = document.createElement("div");
-      div.className = "item fade";
+      const item = document.createElement("div");
+      item.className = "item fade";
 
       const image = document.createElement("img");
       image.src = img.src;
@@ -85,12 +87,12 @@ function renderGallery(type) {
       const label = document.createElement("span");
       label.textContent = img.label;
 
-      div.appendChild(image);
-      div.appendChild(label);
+      item.appendChild(image);
+      item.appendChild(label);
 
-      div.onclick = () => openModal(img.src);
+      item.onclick = () => openModal(img.src);
 
-      grid.appendChild(div);
+      grid.appendChild(item);
     });
 
   initScrollFade();
@@ -100,8 +102,8 @@ function renderGallery(type) {
    フィルター
 ========================= */
 function filterGallery(e, type) {
-
-  document.querySelectorAll(".category button")
+  document
+    .querySelectorAll(".category button")
     .forEach(btn => btn.classList.remove("active"));
 
   e.target.classList.add("active");
@@ -114,6 +116,7 @@ function filterGallery(e, type) {
 ========================= */
 function openModal(src) {
   const modal = document.getElementById("modal");
+
   modal.style.display = "flex";
   document.getElementById("modal-img").src = src;
 }
@@ -126,7 +129,6 @@ function closeModal() {
    フェードイン
 ========================= */
 function initScrollFade() {
-
   const elements = document.querySelectorAll(".fade");
 
   const observer = new IntersectionObserver(entries => {
@@ -144,7 +146,6 @@ function initScrollFade() {
    パララックス
 ========================= */
 function initParallax() {
-
   window.addEventListener("scroll", () => {
     const img = document.querySelector(".hero img");
     if (!img) return;
