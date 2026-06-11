@@ -4,10 +4,15 @@ let DATA = null;
    初期化
 ========================= */
 document.addEventListener("DOMContentLoaded", async () => {
-  await loadData();
-  renderAll();
-  initScrollFade();
-  initParallax();
+  try {
+    await loadData();
+    renderAll();
+    initScrollFade();
+    initParallax();
+    init360Viewer();
+  } catch (e) {
+    console.error("初期化エラー:", e);
+  }
 });
 
 /* =========================
@@ -15,6 +20,11 @@ document.addEventListener("DOMContentLoaded", async () => {
 ========================= */
 async function loadData() {
   const res = await fetch("data/hideaway.json");
+
+  if (!res.ok) {
+    throw new Error("JSON読み込み失敗");
+  }
+
   DATA = await res.json();
 }
 
@@ -23,10 +33,12 @@ async function loadData() {
 ========================= */
 function renderAll() {
 
-  document.getElementById("title").textContent = DATA.title;
-  document.getElementById("subtitle").textContent = DATA.subtitle;
-  document.getElementById("concept-title").textContent = DATA.conceptTitle;
-  document.getElementById("concept-text").textContent = DATA.conceptText;
+  if (!DATA) return;
+
+  document.getElementById("title").textContent = DATA.title || "";
+  document.getElementById("subtitle").textContent = DATA.subtitle || "";
+  document.getElementById("concept-title").textContent = DATA.conceptTitle || "";
+  document.getElementById("concept-text").textContent = DATA.conceptText || "";
 
   const heroImg = document.getElementById("hero-img");
   heroImg.src = DATA.hero;
@@ -35,9 +47,26 @@ function renderAll() {
 }
 
 /* =========================
+   360ビュー
+========================= */
+function init360Viewer() {
+
+  if (!DATA.panorama) return;
+
+  pannellum.viewer('panorama', {
+    type: "equirectangular",
+    panorama: DATA.panorama,
+    autoLoad: true,
+    showZoomCtrl: true
+  });
+}
+
+/* =========================
    ギャラリー
 ========================= */
 function renderGallery(type) {
+
+  if (!DATA || !DATA.images) return;
 
   const grid = document.getElementById("grid");
   grid.innerHTML = "";
@@ -64,7 +93,7 @@ function renderGallery(type) {
       grid.appendChild(div);
     });
 
-  initScrollFade(); // 再適用
+  initScrollFade();
 }
 
 /* =========================
